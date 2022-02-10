@@ -10,8 +10,8 @@ private:
   int sizeIn;
   std::vector<std::string> tokenStream;
 public:
-  int parseIn(std::string inString);
-  std::vector<std::string> tokenFromInput(std::string inString);
+  std::vector<std::string> tokenFromInput(const std::string& inString);
   std::vector<std::string> getTokenStream();
+  bool isValidToken(std::string someString);
 };
 #endif
