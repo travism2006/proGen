@@ -1,42 +1,30 @@
 #include "Lexer.h"
 #include <algorithm>
 
-int Lexer::parseIn(std::string inString)
+std::vector<std::string> Lexer::tokensFromInput(const std::string& inString)
 {
-  for(std::string::iterator it=inString.begin(); it!=inString.end(); ++it)
+  std::vector<std::string> tokens;
+  std::string tok = "";
+  char delim = ' ';
+  std::istringstream tokenStream(inString);
+  
+  while(std::getline(tokenStream, tok, delim))
   {
-    std::cout << *it;
-    if(*it==' ')
-      std::cout << "" << std::endl;
+    tokens.push_back(tok);
   }
-  std::cout<< '\n';
-  int x = std::count(inString.begin(),inString.end(), ' ');
-  if(x >= 1)
-    return x;
-  return -1;
-}
-
-std::vector<std::string> Lexer::tokensFromInput(std::string inString)
-{
-  std::vector<std::string> currTokens;
-  std::string builder = "";
-  for(int i = 0; i < inString.length(); ++i)
-  {
-    if(inString[i]==' ')
-    {
-      currTokens.push_back(builder);
-      builder = "";
-    }
-    else
-    {
-      builder.push_back(inString[i]);
-    }
-  }
-  return currTokens;
+  
+  return tokens;
 }
 
 
 std::vector<std::string> Lexer::getTokenStream()
 {
   return this->tokenStream;
+}
+
+bool Lexer::isValidToken(std::string someString)
+{
+  CmdRegistry cmds;
+  if(cmds.isCmd(someStri))return true;
+  return false;
 }
