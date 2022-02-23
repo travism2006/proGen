@@ -4,6 +4,7 @@
 #include "Cmd.h"
 #include "Context.h"
 #include <string>
+
 class AddCls: public Cmd
 {
 private:
@@ -12,4 +13,5 @@ public:
   void execOp(std::string inString, Context someContext);
   void setClassName(const char* aName, Context someContext);
 };
+
 #endif
