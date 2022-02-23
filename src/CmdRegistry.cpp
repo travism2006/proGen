@@ -13,3 +13,13 @@ void CmdRegistry::printCmdList()
   
   std::cout << "" << std::endl;
 }
+
+bool CmdRegistry::isCmd(std::string someString)
+{
+  return this->cmdsTree.isCmd(someString);
+}
+
+CmdRegistry::CmdRegistry()
+{
+  this->cmdsTree = new Trie();
+}
