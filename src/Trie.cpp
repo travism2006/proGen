@@ -40,11 +40,16 @@ bool Trie::searchTrie(std::string keySomeWord)
   if (this == NULL) return false;
   
   Trie* curr = this;
-  for(int = i; i < keySomeWord.length(); i++)
+  for(int i = 0; i < keySomeWord.length(); i++)
   {
     curr = curr->characterArr[keyNewWord[i]];
     if (curr == NULL) return false;
   }
   
   return curr->isLeaf;
+}
+
+bool Trie::isCmd(std::string someStrIn)
+{
+  return false;
 }
