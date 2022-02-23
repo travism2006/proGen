@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stdio.h>
 #include "AddCls.h"
-#include "Context.h"
 
 void AddCls::setClassName(const char* aName, Context someContext)
 {
