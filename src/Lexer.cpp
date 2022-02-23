@@ -1,5 +1,7 @@
 #include "Lexer.h"
+#include "CmdRegistry.h"
 #include <algorithm>
+#include <sstream>
 
 std::vector<std::string> Lexer::tokensFromInput(const std::string& inString)
 {
@@ -25,6 +27,7 @@ std::vector<std::string> Lexer::getTokenStream()
 bool Lexer::isValidToken(std::string someString)
 {
   CmdRegistry cmds;
-  if(cmds.isCmd(someStri))return true;
+  if(cmds.isCmd(someString))return true;
   return false;
 }
+
